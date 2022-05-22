@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./components/Home";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import SearchItem from './components/SearchItem'
+import AddItem from './components/AddItem'
+import TradeNego from './components/TradeNego'
+import Notifications from './components/Notifications'
+import Login from './components/Login'
+import Signup from './components/Signup'
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer></ToastContainer>
+      <Router>
+          <Routes>
+            <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/Search" element={<SearchItem />}></Route>
+            <Route exact path="/Add" element={<AddItem />}></Route>
+            <Route exact path="/Notifications" element={<TradeNego />}></Route>
+            <Route exact path="/Trade" element={<Notifications />}></Route>
+            <Route exact path="/Login" element={<Login />}></Route>
+            <Route exact path="/Signup" element={<Signup />}></Route>
+            <Route exact path="/*" element={<Login />}></Route>
+          </Routes>
+      </Router>
     </div>
   );
 }

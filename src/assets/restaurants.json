@@ -1,0 +1,84 @@
+{
+    "Restaurants": [
+        {
+            "name": "Jojo's Cupcakes and Cremes",
+            "description": "Check that the first number in your longitude coordinate is between -180 and 180.",
+            "lat": "38.78649504670335",
+            "long": "-76.22422732885555",
+            "img": "RS1",
+            "price": "$34.67"
+        },
+        {
+            "name": "Americas Best wings",
+            "description": "Basic stop for wings and seafood",
+            "lat": "39.261539802880094",
+            "long": "-76.695851755505",
+            "img": "RS2",
+            "price": "$54.67"
+        },
+        {
+            "name": "PERSIS BIRYANI INDIAN GRILL",
+            "description": "You are gonna loove it",
+            "lat": "39.28595899987863",
+            "long": "-76.75205429917767",
+            "img": "RS3",
+            "price": "$24.67"
+        },
+	{
+            "name": "PARADISE INDIAN CUISINE",
+            "description": "Modern Indian Restaurant With Wines",
+            "lat": "39.28259881107533",
+            "long": "-76.80456197602254",
+            "img": "RS4",
+            "price": "$29.67"
+        },
+	{
+            "name": "PIZAA HUT",
+            "description": "Casual Pizaa Chain With Wide Selection",
+            "lat": "39.27798716535915",
+            "long": "-76.71845197575182",
+            "img": "RS5",
+            "price": "$43.56"
+        },
+        {
+            "name": "The Land of Kush",
+            "description": "Relaxed Choice for Vegetarian soul food",
+            "lat": "39.30018360100129",
+            "long": "-76.62155183964974",
+            "img": "RS6",
+            "price": "$154.67"
+        },
+        {
+            "name": "Di Pasquale's Italian Marketplace",
+            "description": "Italian Shop Serving Soups,Subs & Pizaa",
+            "lat": "39.278969831838424",
+            "long": "-76.56410775128674",
+            "img": "RS7",
+            "price": "$124.67"
+        },
+	{
+            "name": "Mango Grove",
+            "description": "Best Vegetarian Restaurant",
+            "lat": "39.19108943184585",
+            "long": "-76.81853391081744",
+            "img": "RS8",
+            "price": "$34.69"
+        },
+	 {
+            "name": "El Patron Mexican Grill",
+            "description": "Taste the Real Mexican Food",
+            "lat": "39.27533410770551",
+            "long": "-76.71774876848706",
+            "img": "RS9",
+            "price": "$61.67"
+        },
+	{
+            "name": "sweetFrog Premium Frozen Yogurt",
+            "description": "Tastes yummy",
+            "lat": "39.28347093634192",
+            "long": "-76.75484504521434",
+            "img": "RS10",
+            "price": "$24.87"
+        }
+    ]
+}

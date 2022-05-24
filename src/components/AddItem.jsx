@@ -37,6 +37,8 @@ export default function Home() {
   const [quantity, setQuantity] = React.useState("");
   const [desc, setDesc] = React.useState("");
   const [expectations, setExpectations] = React.useState("");
+  const [price, setPrice] = React.useState("");
+
 
   const [loader, setLoader] = React.useState(true);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -86,6 +88,7 @@ export default function Home() {
             reqbody['quantity'] = quantity
             reqbody['sellerid'] = cookie.load('user')['id']
             reqbody['inserteddate'] = "22/03/2022"
+            reqbody['price'] = price
             axios({
               method: "POST",
               url: "http://localhost:8081/api/items",
@@ -95,8 +98,8 @@ export default function Home() {
               },
             }).then((res)=>{
               console.log(res)
-              toast.success("Item successfully added 🎉", {
-                position: "top-right",
+              toast.info("Item successfully added", {
+                position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
                 autoClose: false,
@@ -270,6 +273,17 @@ export default function Home() {
                 />
               </Grid>
               <Grid item xs={6}>
+                <TextField
+                  size="small"
+                  label="Price"
+                  variant="outlined"
+                  fullWidth
+                  onChange={(event) => {
+                    setPrice(event.target.value);
+                  }}
+                />
+              </Grid>
+              <Grid item xs={4}>
                 <Button
                   fullWidth
                   color="primary"

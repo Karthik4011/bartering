@@ -69,7 +69,7 @@ export default function Home() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/");}}
+            onClick={()=>{ history("/Home");}}
           >
             Home
           </Typography>
@@ -124,8 +124,8 @@ export default function Home() {
             sx={{ mr: 2 }}
             onClick={()=>{
               cookie.remove('user')
-              toast.success("Logged out successfull 🎉", {
-                position: "top-right",
+              toast.info("Logged out successfull", {
+                position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
                 autoClose: false,

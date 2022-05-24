@@ -37,17 +37,17 @@ export default function Home() {
         },
       }).then((res)=>{
           if(res.data.password == password){
-          toast.success("Login successfull 🎉", {
-            position: "top-right",
+          toast.info("Login successfull", {
+            position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
             autoClose: false,
           });
-          history("/")
+          history("/Home")
           cookie.save('user', res.data)
         }else{
-            toast.error("Incorrect email or password 😲", {
-                position: "top-right",
+            toast.info("Incorrect email or password", {
+                position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
                 autoClose: false,
@@ -55,8 +55,8 @@ export default function Home() {
         }
       })
     }else{
-        toast.warning("Please enter Email and Passowrd 😲", {
-            position: "top-right",
+        toast.info("Please enter Email and Passowrd", {
+            position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
             autoClose: false,

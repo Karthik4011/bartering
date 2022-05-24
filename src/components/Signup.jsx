@@ -39,8 +39,8 @@ export default function Home() {
             },
           }).then((res)=>{
               console.log(res)
-              toast.success("Account created successfully 🎉", {
-                position: "top-right",
+              toast.info("Account created successfully", {
+                position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
                 autoClose: false,
@@ -48,8 +48,8 @@ export default function Home() {
               history("/Login")
           })
       }else{
-        toast.error("Please enter all details 😲", {
-            position: "top-right",
+        toast.info("Please enter all details", {
+            position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
             autoClose: false,

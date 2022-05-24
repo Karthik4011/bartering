@@ -64,7 +64,7 @@ export default function Home() {
 
   const insertNotify1 = (item, msg) => {
     var reqbod = {}
-    reqbod['userid'] = item['id']
+    reqbod['userid'] = item['sellerid']
     reqbod['seller'] = item['selleritemowner']
     reqbod['buyer'] = item['borrowitemowner']
     reqbod['message'] = msg
@@ -173,6 +173,13 @@ export default function Home() {
                           <Grid item xs={5}>
                             <Typography>Seller: {nego.selleritemowner}</Typography>
                           </Grid>
+                          <Grid item xs={5}>
+                            <Typography>Price: {nego.borrowitemprice}</Typography>
+                          </Grid>
+                          <Grid item xs={2} style={{ paddingTop: 20 }}></Grid>
+                          <Grid item xs={5}>
+                            <Typography>Price: {nego.solditemprice}</Typography>
+                          </Grid>
                         </Grid>
                       </CardContent>
                      
@@ -195,15 +202,15 @@ export default function Home() {
                               },
                             }).then((res) => {
                               console.log(res);
-                              toast.success("Status Updated 🎉", {
-                                position: "top-right",
+                              toast.info("Status Updated....", {
+                                position: "top-center",
                                 pauseOnHover: true,
                                 draggable: true,
                                 autoClose: false,
                               });
                               insertNotify(nego, "Trade has been rejected......")
                               insertNotify1(nego, "Trade has been rejected......")
-                              history("/")
+                              history("/Home")
                             });
                           }}
                           color="error"
@@ -228,15 +235,15 @@ export default function Home() {
                               },
                             }).then((res) => {
                               console.log(res);
-                              toast.success("Status Updated 🎉", {
-                                position: "top-right",
+                              toast.info("Status Updated", {
+                                position: "bottom-center",
                                 pauseOnHover: true,
                                 draggable: true,
                                 autoClose: false,
                               });
                               insertNotify(nego, "Trade has been Accepted.....")
                               insertNotify1(nego, "Trade has been Accepted.....")
-                              history("/")
+                              history("/Home")
                             });
                           }}
                           color="success"
@@ -341,6 +348,13 @@ export default function Home() {
                           <Grid item xs={2} style={{ paddingTop: 20 }}></Grid>
                           <Grid item xs={5}>
                             <Typography>Seller: {nego.selleritemowner}</Typography>
+                          </Grid>
+                          <Grid item xs={5}>
+                            <Typography>Price: {nego.borrowitemprice}</Typography>
+                          </Grid>
+                          <Grid item xs={2} style={{ paddingTop: 20 }}></Grid>
+                          <Grid item xs={5}>
+                            <Typography>Price: {nego.solditemprice}</Typography>
                           </Grid>
                         </Grid>
                       </CardContent>

@@ -143,6 +143,19 @@ export default function Home() {
                               >
                                 Expectations: {item.expectations}
                               </Typography>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                style={{
+                                  maxHeight:"40px",
+                                  "text-overflow": "ellipsis",
+                                  width: "100%",
+                                  overflow: "hidden",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                Price: {item.price}
+                              </Typography>
                             </CardContent>
                             <CardActions class="justify-center">
                               <Button

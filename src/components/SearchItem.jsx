@@ -77,6 +77,8 @@ export default function Home() {
     reqbody['solditemimage'] = producttype['image']
     reqbody['solditemname'] = producttype['name']
     reqbody['borrowitemname'] = selectedItem['name']
+    reqbody['solditemprice'] = producttype['price']
+    reqbody['borrowitemprice'] = selectedItem['price']
 
     console.log(reqbody)
     axios({
@@ -88,8 +90,8 @@ export default function Home() {
       },
     }).then((res)=>{
       console.log(res)
-      toast.success("Item Requested successfully 🎉", {
-        position: "top-right",
+      toast.info("Item Requested successfully", {
+        position: "bottom-center",
         pauseOnHover: true,
         draggable: true,
         autoClose: false,
@@ -117,8 +119,8 @@ export default function Home() {
       },
     }).then((res)=>{
       console.log(res)
-      toast.info("Notified successfully 🎉", {
-        position: "top-right",
+      toast.info("Notified successfully", {
+        position: "bottom-center",
         pauseOnHover: true,
         draggable: true,
         autoClose: false,
@@ -268,6 +270,17 @@ export default function Home() {
                             }}
                         color="text.secondary">
                           Expectations: {item.expectations}
+                        </Typography>
+                        <Typography variant="body2"
+                             style={{
+                              maxHeight:"40px",
+                              "text-overflow": "ellipsis",
+                              width: "100%",
+                              overflow: "hidden",
+                              whiteSpace: "nowrap",
+                            }}
+                        color="text.secondary">
+                          Price: {item.price}
                         </Typography>
                       </CardContent>
                       <CardActions class="justify-center">

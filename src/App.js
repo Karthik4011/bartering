@@ -20,7 +20,7 @@ function App() {
       <ToastContainer></ToastContainer>
       <Router>
           <Routes>
-            <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/Home" element={<Home />}></Route>
             <Route exact path="/Search" element={<SearchItem />}></Route>
             <Route exact path="/Add" element={<AddItem />}></Route>
             <Route exact path="/Notifications" element={<TradeNego />}></Route>

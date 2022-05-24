@@ -159,7 +159,11 @@ export default function Home() {
                   >
                     <MenuItem value="Book">Book</MenuItem>
                     <MenuItem value="Furniture">Furniture</MenuItem>
-                    <MenuItem value="Electrnics">Electrnics</MenuItem>
+                    <MenuItem value="Electronics">Electronics</MenuItem>
+                    <MenuItem value="Food">Food</MenuItem>
+                    <MenuItem value="Jwellery">Jwellery</MenuItem>
+                    <MenuItem value="Clothes">Clothes</MenuItem>
+                    <MenuItem value="Other">Other</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>

@@ -10,7 +10,9 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import Intro from './components/Intro';
+import ForgetPassword from './components/ForgetPassword';
+import About from './components/About';
 
 
 
@@ -27,7 +29,10 @@ function App() {
             <Route exact path="/Trade" element={<Notifications />}></Route>
             <Route exact path="/Login" element={<Login />}></Route>
             <Route exact path="/Signup" element={<Signup />}></Route>
-            <Route exact path="/*" element={<Login />}></Route>
+            <Route exact path="/Intor" element={<Intro />}></Route>
+            <Route exact path="/Forgot" element={<ForgetPassword />}></Route>
+            <Route exact path="/About" element={<About />}></Route>
+            <Route exact path="/*" element={<Intro />}></Route>
           </Routes>
       </Router>
     </div>

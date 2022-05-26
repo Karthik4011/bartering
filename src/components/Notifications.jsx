@@ -113,7 +113,7 @@ export default function Home() {
         style={{ marginTop: 20, padding: 10 }}
         spacing={2}
       >
-        <Grid item xs={6} style={{maxHeight:"600px", overflowY:"scroll", overflowX:"hidden"}}>
+        <Grid item xs={6} style={{maxHeight:"600px", overflowY:"scroll", overflowX:"hidden", paddingBottom: 30, paddingTop:30}}>
           <Paper elevation={3}>
             <Typography style={{fontSize: 12, backgroundColor:"grey",textAlign:"center", color:"whitesmoke", borderRadius:"5px 5px 0px 0px", padding:5}}>Received Negotiations</Typography>
             <Grid container style={{ padding: 20 }} spacing={1}>
@@ -291,7 +291,7 @@ export default function Home() {
             </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={6} style={{maxHeight:"600px", overflowY:"scroll", overflowX:"hidden"}}>
+        <Grid item xs={6} style={{maxHeight:"600px", overflowY:"scroll", overflowX:"hidden", paddingBottom: 30, paddingTop:30}}>
           <Paper elevation={3}>
           <Typography style={{fontSize: 12, backgroundColor:"grey",textAlign:"center", color:"whitesmoke", borderRadius:"5px 5px 0px 0px", padding:5}}>Sent Negotiations</Typography>
             <Grid container style={{ padding: 20 }} spacing={1}>
@@ -409,6 +409,52 @@ export default function Home() {
           </Paper>
         </Grid>
       </Grid>
+      <AppBar position="fixed"  style={{boxShadow:"none",bottom:0,top:"auto"}}>
+        <Toolbar>
+        <div style={{flexGrow:0.5}} />
+          <Button
+            variant="contained"
+            color="primary"
+            style={{backgroundColor:"white", color:"black"}}
+            onClick={() => {
+              history("/Search");
+            }}
+          >
+            Previous
+          </Button>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                history("/Notifications");
+              }}
+            >
+              Next
+            </Button>
+          </IconButton>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                cookie.remove('user')
+                toast.info("Application exited successfully", {
+                  position: "bottom-center",
+                  pauseOnHover: true,
+                  draggable: true,
+                  autoClose: false,
+                });
+                history('/Login')
+              }}
+            >
+              Exit
+            </Button>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     </Box>
   );
 }

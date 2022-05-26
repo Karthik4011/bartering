@@ -13,6 +13,10 @@ import Header from "./Header";
 import Paper from "@mui/material/Paper";
 import cookie from "react-cookies";
 import axios from "axios";
+import Button from "@mui/material/Button";
+import { ToastContainer, toast } from "react-toastify";
+
+
 
 export default function Home() {
   const history = useNavigate();
@@ -115,6 +119,50 @@ export default function Home() {
           </Paper>
         </Grid>
       </Grid>
+      <AppBar position="fixed"  style={{boxShadow:"none",bottom:0,top:"auto"}}>
+        <Toolbar>
+        <div style={{flexGrow:0.5}} />
+          <Button
+            variant="contained"
+            color="primary"
+            style={{backgroundColor:"white", color:"black"}}
+            onClick={() => {
+              history("/Trade");
+            }}
+          >
+            Previous
+          </Button>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{color:"white"}}
+              color="primary"
+              disabled
+            >
+              Next
+            </Button>
+          </IconButton>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                cookie.remove('user')
+                toast.info("Application exited successfully", {
+                  position: "bottom-center",
+                  pauseOnHover: true,
+                  draggable: true,
+                  autoClose: false,
+                });
+                history('/Login')
+              }}
+            >
+              Exit
+            </Button>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     </Box>
   );
 }

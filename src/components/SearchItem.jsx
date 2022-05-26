@@ -221,7 +221,7 @@ export default function Home() {
                 />
               </Grid>
               <Grid item xs={12} style={{marginTop:20}}>
-                <Grid container spacing={2}>
+                <Grid container spacing={2} style={{maxHeight: 550, overflow:"scroll", paddingBottom:30, paddingTop:20}}>
                   {items.map((item,key)=>
                   item.sellerid != cookie.load('user')['id'] ? (
                     <Grid item xs={3}>
@@ -352,6 +352,52 @@ export default function Home() {
           </Button>
         </DialogActions>
       </Dialog>
+      <AppBar position="fixed"  style={{boxShadow:"none",bottom:0,top:"auto"}}>
+        <Toolbar>
+        <div style={{flexGrow:0.5}} />
+          <Button
+            variant="contained"
+            color="primary"
+            style={{backgroundColor:"white", color:"black"}}
+            onClick={() => {
+              history("/Add");
+            }}
+          >
+            Previous
+          </Button>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                history("/Trade");
+              }}
+            >
+              Next
+            </Button>
+          </IconButton>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                cookie.remove('user')
+                toast.info("Application exited successfully", {
+                  position: "bottom-center",
+                  pauseOnHover: true,
+                  draggable: true,
+                  autoClose: false,
+                });
+                history('/Login')
+              }}
+            >
+              Exit
+            </Button>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     </Box>
   );
 }

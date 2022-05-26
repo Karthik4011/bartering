@@ -305,6 +305,53 @@ export default function Home() {
           </Paper>
         </Grid>
       </Grid>
+      <AppBar position="fixed"  style={{boxShadow:"none",bottom:0,top:"auto"}}>
+        <Toolbar>
+        <div style={{flexGrow:0.5}} />
+          <Button
+            variant="contained"
+            color="primary"
+            style={{backgroundColor:"white", color:"black"}}
+            onClick={() => {
+              history("/Home");
+            }}
+          >
+            Previous
+          </Button>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                history("/Search");
+              }}
+            >
+              Next
+            </Button>
+          </IconButton>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                cookie.remove('user')
+                toast.info("Application exited successfully", {
+                  position: "bottom-center",
+                  pauseOnHover: true,
+                  draggable: true,
+                  autoClose: false,
+                });
+                history('/Login')
+              }}
+            >
+              Exit
+            </Button>
+          </IconButton>
+          
+        </Toolbar>
+      </AppBar>
     </Box>
   );
 }

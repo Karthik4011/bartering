@@ -10,10 +10,12 @@ import Backdrop from "@mui/material/Backdrop";
 import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import cookie from "react-cookies";
 import IconButton from "@mui/material/IconButton";
 import logo from '../assets/logo.png'
+
 
 
 
@@ -25,39 +27,45 @@ export default function Home() {
   const [loader, setLoader] = React.useState(true);
   const [email, setEmail] = React.useState(null);
   const [password, setPassword] = React.useState(null);
-  const [name, setName] = React.useState(null);
 
-  const handleSignup = () => {
-      if(email != "" && email != null && password != "" && password != null && name != "" && name != null){
-        axios({
-            method: "POST",
-            url: "http://localhost:8081/api/signup",
-            data: {
-              email: email,
-              password: password,
-              name: name
-            },
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }).then((res)=>{
-              console.log(res)
-              toast.info("Account created successfully", {
-                position: "bottom-center",
-                pauseOnHover: true,
-                draggable: true,
-                autoClose: false,
-              });
-              history("/Login")
-          })
-      }else{
-        toast.info("Please enter all details", {
+  const handleLogin = () => {
+      if(email != "" & email != null){
+      axios({
+        method: "POST",
+        url: "http://localhost:8081/api/login",
+        data: {
+          email: email,
+        },
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res)=>{
+          if(res.data.password == password){
+          toast.info("Login successfull", {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
             autoClose: false,
           });
-      }
+          history("/Home")
+          cookie.save('user', res.data)
+        }else{
+            toast.info("Incorrect email or password", {
+                position: "bottom-center",
+                pauseOnHover: true,
+                draggable: true,
+                autoClose: false,
+              });
+        }
+      })
+    }else{
+        toast.info("Please enter Email and Passowrd", {
+            position: "bottom-center",
+            pauseOnHover: true,
+            draggable: true,
+            autoClose: false,
+          });
+    }
   }
 
   useEffect(() => {
@@ -112,16 +120,6 @@ export default function Home() {
           >
             Sign Up
           </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/About");}}
-          >
-            About US
-          </Typography>
         </Toolbar>
     </AppBar>
       <Grid container justifyContent="center" style={{ marginTop: 30 }}>
@@ -141,46 +139,29 @@ export default function Home() {
                     >
                     </TextField>
                 </Grid>
-                <Grid item xs={10} style={{marginTop:10}}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        label="Enter name"
-                        value={name}
-                        fullWidth
-                        onChange={(event)=>{
-                            setName(event.target.value)
-                        }}
-                    >
-                    </TextField>
-                </Grid>
-                <Grid item xs={10} style={{marginTop:10}}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        label="Password"
-                        value={password}
-                        fullWidth
-                        onChange={(event)=>{
-                            setPassword(event.target.value)
-                        }}
-                    >
-                    </TextField>
-                </Grid>
-                <Grid item xs={6} style={{marginTop:30}}
-                onClick={handleSignup}
-                >
-                    <Button fullWidth color="primary" variant="contained">Create Account</Button>
+                <Grid item xs={6} style={{marginTop:30}}>
+                    <Button fullWidth color="primary" variant="contained"
+                    onClick={()=>{
+                        toast.info("Password Reset details has been successfully sent", {
+                            position: "bottom-center",
+                            pauseOnHover: true,
+                            draggable: true,
+                            autoClose: false,
+                          });
+                          history("/Login")
+                    }}
+                    >Send Password Reset Link</Button>
                 </Grid>
                 <Grid item xs={12}></Grid>
                 <Grid item xs={6} style={{marginTop:5}}>
-                   <Typography style={{fontSize:10, color:"CaptionText",fontStyle:"italic", cursor:"pointer"}}
+                   <Typography style={{fontSize:12, color:"CaptionText",fontStyle:"italic", cursor:"pointer"}}
                    onClick={()=>{
-                       history("/Login")
+                       history("/Signup")
                    }}
-                   >Already Have Account? Login</Typography>
-                </Grid>            
+                   >Don't Have Account? Create Account</Typography>
+                    
                 </Grid>
+            </Grid>
           </Paper>
         </Grid>
       </Grid>
@@ -191,7 +172,7 @@ export default function Home() {
             variant="contained"
             color="primary"
             onClick={() => {
-              history("/Login");
+              history("/intor");
             }}
             style={{backgroundColor:"white", color:"black"}}
             >
@@ -203,7 +184,7 @@ export default function Home() {
               style={{backgroundColor:"white", color:"black"}}
               color="primary"
               onClick={() => {
-                history("/About");
+                history("/Signup");
               }}
             >
               Next

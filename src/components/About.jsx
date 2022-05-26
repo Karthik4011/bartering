@@ -128,59 +128,11 @@ export default function Home() {
         <Grid item xs={5}>
           <Paper elevation={3} style={{padding:"30px 10px 30px 10px"}}>
             <Grid container justifyContent={"center"}>
-                <Grid item xs={10}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        label="Email"
-                        value={email}
-                        fullWidth
-                        onChange={(event)=>{
-                            setEmail(event.target.value)
-                        }}
-                    >
-                    </TextField>
-                </Grid>
-                <Grid item xs={10} style={{marginTop:10}}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        label="Enter name"
-                        value={name}
-                        fullWidth
-                        onChange={(event)=>{
-                            setName(event.target.value)
-                        }}
-                    >
-                    </TextField>
-                </Grid>
-                <Grid item xs={10} style={{marginTop:10}}>
-                    <TextField
-                        variant="outlined"
-                        size="small"
-                        label="Password"
-                        value={password}
-                        fullWidth
-                        onChange={(event)=>{
-                            setPassword(event.target.value)
-                        }}
-                    >
-                    </TextField>
-                </Grid>
-                <Grid item xs={6} style={{marginTop:30}}
-                onClick={handleSignup}
-                >
-                    <Button fullWidth color="primary" variant="contained">Create Account</Button>
-                </Grid>
-                <Grid item xs={12}></Grid>
-                <Grid item xs={6} style={{marginTop:5}}>
-                   <Typography style={{fontSize:10, color:"CaptionText",fontStyle:"italic", cursor:"pointer"}}
-                   onClick={()=>{
-                       history("/Login")
-                   }}
-                   >Already Have Account? Login</Typography>
-                </Grid>            
-                </Grid>
+              
+             <Typography style={{fontSize:18}}>Priyanka Suddireddy</Typography>
+                
+        
+            </Grid>
           </Paper>
         </Grid>
       </Grid>
@@ -191,7 +143,7 @@ export default function Home() {
             variant="contained"
             color="primary"
             onClick={() => {
-              history("/Login");
+              history("/Signup");
             }}
             style={{backgroundColor:"white", color:"black"}}
             >
@@ -200,11 +152,9 @@ export default function Home() {
           <IconButton edge="end" color="inherit">
             <Button
               variant="contained"
-              style={{backgroundColor:"white", color:"black"}}
+              style={{color:"white"}}
               color="primary"
-              onClick={() => {
-                history("/About");
-              }}
+              disabled
             >
               Next
             </Button>

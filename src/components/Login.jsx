@@ -13,6 +13,9 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import cookie from "react-cookies";
+import IconButton from "@mui/material/IconButton";
+import logo from '../assets/logo.png'
+
 
 
 
@@ -75,8 +78,28 @@ export default function Home() {
   ) : (
     <Box sx={{ flexGrow: 1 }}>
     <AppBar position="static" style={{boxShadow:"none"}}>
-        <Toolbar>
+        <Toolbar style={{textAlign:"left"}}>
         <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block", textAlign:"left" } }}
+            style ={{cursor:"pointer"}}
+            onClick={()=>{ history("/intor");}}
+          >
+            <img src={logo} style={{width:100,marginTop:5,borderRadius:50}}></img>
+          </Typography>
+        <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            style ={{cursor:"pointer"}}
+            onClick={()=>{ history("/intor");}}
+          >
+            Bartering
+          </Typography>
+          <Typography
             variant="h6"
             noWrap
             component="div"
@@ -84,7 +107,27 @@ export default function Home() {
             style ={{cursor:"pointer"}}
             onClick={()=>{ history("/Login");}}
           >
-            Bartering
+            Login
+          </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            style ={{cursor:"pointer"}}
+            onClick={()=>{ history("/Signup");}}
+          >
+            Sign Up
+          </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            style ={{cursor:"pointer"}}
+            onClick={()=>{ history("/About");}}
+          >
+            About US
           </Typography>
         </Toolbar>
     </AppBar>
@@ -123,18 +166,52 @@ export default function Home() {
                     onClick={handleLogin}
                     >Login</Button>
                 </Grid>
-                <Grid item xs={12}></Grid>
-                <Grid item xs={6} style={{marginTop:5}}>
-                   <Typography style={{fontSize:10, color:"CaptionText",fontStyle:"italic", cursor:"pointer"}}
+                <Grid item xs={12} style={{marginTop:15}}></Grid>
+                <Grid item xs={7} style={{marginTop:5}}>
+                   <Typography style={{fontSize:12, color:"CaptionText",fontStyle:"italic", cursor:"pointer"}}
                    onClick={()=>{
                        history("/Signup")
                    }}
                    >Don't Have Account? Create Account</Typography>
                 </Grid>
+                <Grid item xs={5} style={{marginTop:5}}>
+                    <Typography style={{fontSize:12, color:"CaptionText",fontStyle:"italic", cursor:"pointer"}}
+                   onClick={()=>{
+                       history("/Forgot")
+                   }}
+                   >Forgot Password?</Typography>
+                </Grid>
             </Grid>
           </Paper>
         </Grid>
       </Grid>
+      <AppBar position="fixed"  style={{boxShadow:"none",bottom:0,top:"auto"}}>
+        <Toolbar>
+        <div style={{flexGrow:0.5}} />
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              history("/intor");
+            }}
+            style={{backgroundColor:"white", color:"black"}}
+            >
+            Previous
+          </Button>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                history("/Signup");
+              }}
+            >
+              Next
+            </Button>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     </Box>
   );
 }

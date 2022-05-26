@@ -18,6 +18,10 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import { ToastContainer, toast } from "react-toastify";
+
 
 export default function Home() {
   const history = useNavigate();
@@ -115,7 +119,7 @@ export default function Home() {
                                 variant="body2"
                                 color="text.secondary"
                                 style={{
-                                  maxHeight:"40px",
+                                  maxHeight: "40px",
                                   "text-overflow": "ellipsis",
                                   width: "100%",
                                   overflow: "hidden",
@@ -134,7 +138,7 @@ export default function Home() {
                                 variant="body2"
                                 color="text.secondary"
                                 style={{
-                                  maxHeight:"40px",
+                                  maxHeight: "40px",
                                   "text-overflow": "ellipsis",
                                   width: "100%",
                                   overflow: "hidden",
@@ -147,7 +151,7 @@ export default function Home() {
                                 variant="body2"
                                 color="text.secondary"
                                 style={{
-                                  maxHeight:"40px",
+                                  maxHeight: "40px",
                                   "text-overflow": "ellipsis",
                                   width: "100%",
                                   overflow: "hidden",
@@ -189,6 +193,51 @@ export default function Home() {
           </Paper>
         </Grid>
       </Grid>
+      
+      <AppBar position="fixed"  style={{boxShadow:"none",bottom:0,top:"auto"}}>
+        <Toolbar>
+        <div style={{flexGrow:0.5}} />
+          <Button
+            variant="contained"
+            color="primary"
+            disabled
+            style={{color:"white"}}
+          >
+            Previous
+          </Button>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                history("/Add");
+              }}
+            >
+              Next
+            </Button>
+          </IconButton>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                cookie.remove('user')
+                toast.info("Application exited successfully", {
+                  position: "bottom-center",
+                  pauseOnHover: true,
+                  draggable: true,
+                  autoClose: false,
+                });
+                history('/Login')
+              }}
+            >
+              Exit
+            </Button>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     </Box>
   );
 }

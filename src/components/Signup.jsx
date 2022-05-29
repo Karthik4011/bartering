@@ -14,6 +14,7 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import IconButton from "@mui/material/IconButton";
 import logo from '../assets/logo.png'
+import THeader from './TopHeader';
 
 
 
@@ -70,60 +71,7 @@ export default function Home() {
     </Backdrop>
   ) : (
     <Box sx={{ flexGrow: 1 }}>
-    <AppBar position="static" style={{boxShadow:"none"}}>
-        <Toolbar style={{textAlign:"left"}}>
-        <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block", textAlign:"left" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/intor");}}
-          >
-            <img src={logo} style={{width:100,marginTop:5,borderRadius:50}}></img>
-          </Typography>
-        <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/intor");}}
-          >
-            Bartering
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/Login");}}
-          >
-            Login
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/Signup");}}
-          >
-            Sign Up
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/About");}}
-          >
-            About US
-          </Typography>
-        </Toolbar>
-    </AppBar>
+    <THeader></THeader>
       <Grid container justifyContent="center" style={{ marginTop: 30 }}>
         <Grid item xs={5}>
           <Paper elevation={3} style={{padding:"30px 10px 30px 10px"}}>
@@ -207,6 +155,19 @@ export default function Home() {
               }}
             >
               Next
+            </Button>
+          </IconButton>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                window.open("about:blank", "_self");
+                window.close();
+              }}
+            >
+              Exit
             </Button>
           </IconButton>
         </Toolbar>

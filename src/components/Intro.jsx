@@ -13,10 +13,11 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import cookie from "react-cookies";
-import gif from '../assets/gif.gif'
+import gif from '../assets/intor.jpeg'
 import IconButton from "@mui/material/IconButton";
-import logo from '../assets/logo.png';
+import logo from '../assets/intor.jpeg';
 import desc from '../assets/desc.png'
+import THeader from './TopHeader';
 
 
 
@@ -80,60 +81,7 @@ export default function Home() {
     </Backdrop>
   ) : (
     <Box sx={{ flexGrow: 1 }}>
-    <AppBar position="static" style={{boxShadow:"none"}}>
-        <Toolbar style={{textAlign:"left"}}>
-        <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block", textAlign:"left" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/intor");}}
-          >
-            <img src={logo} style={{width:100,marginTop:5,borderRadius:50}}></img>
-          </Typography>
-        <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/intor");}}
-          >
-            Bartering
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/Login");}}
-          >
-            Login
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/Signup");}}
-          >
-            Sign Up
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/About");}}
-          >
-            About US
-          </Typography>
-        </Toolbar>
-    </AppBar>
+    <THeader></THeader>
       <Grid container justifyContent="center" style={{ marginTop: 30 }}>
         <Grid item xs={7} style={{marginTop:30}}>
            <Typography style={{fontSize:28,fontStyle:"italic"}}>What We Do?</Typography>
@@ -141,8 +89,9 @@ export default function Home() {
               Barter is an act of trading goods or services between two or more parties without the use of money —or a monetary medium, such as a credit card. In essence, bartering involves the provision of one good or service by one party in return for another good or service from another party.
            </Typography>
         </Grid>
-        <Grid item xs={6} style={{marginTop:30}}>
-           <img src={gif} style={{width:450}}></img>
+        <Grid xs={12}></Grid>
+        <Grid item xs={6} style={{marginTop:10}}>
+           <img src={gif} style={{width:350, borderRadius:50}}></img>
         </Grid>
         <Grid item xs={6} style={{marginTop:60}}>
            <img src={desc} style={{width:650}}></img>
@@ -151,6 +100,7 @@ export default function Home() {
       <AppBar position="fixed"  style={{boxShadow:"none",bottom:0,top:"auto"}}>
         <Toolbar>
         <div style={{flexGrow:0.5}} />
+        <IconButton edge="end" color="inherit">
           <Button
             variant="contained"
             color="primary"
@@ -159,6 +109,7 @@ export default function Home() {
           >
             Previous
           </Button>
+          </IconButton>
           <IconButton edge="end" color="inherit">
             <Button
               variant="contained"
@@ -169,6 +120,19 @@ export default function Home() {
               }}
             >
               Next
+            </Button>
+          </IconButton>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                window.open("about:blank", "_self");
+                window.close();
+              }}
+            >
+              Exit
             </Button>
           </IconButton>
         </Toolbar>

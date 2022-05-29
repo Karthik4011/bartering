@@ -435,6 +435,18 @@ export default function Home() {
             </Button>
           </IconButton>
           <IconButton edge="end" color="inherit">
+          <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                history("/Home");
+              }}
+            >
+              Home
+            </Button>
+            </IconButton>
+          <IconButton edge="end" color="inherit">
             <Button
               variant="contained"
               style={{backgroundColor:"white", color:"black"}}

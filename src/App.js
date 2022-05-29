@@ -13,6 +13,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Intro from './components/Intro';
 import ForgetPassword from './components/ForgetPassword';
 import About from './components/About';
+import Help from './components/Help';
+import Contact from './components/Contact';
 
 
 
@@ -32,6 +34,8 @@ function App() {
             <Route exact path="/Intor" element={<Intro />}></Route>
             <Route exact path="/Forgot" element={<ForgetPassword />}></Route>
             <Route exact path="/About" element={<About />}></Route>
+            <Route exact path="/Help" element={<Help />}></Route>
+            <Route exact path="/Contact" element={<Contact />}></Route>
             <Route exact path="/*" element={<Intro />}></Route>
           </Routes>
       </Router>

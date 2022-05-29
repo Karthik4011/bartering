@@ -15,6 +15,7 @@ import axios from "axios";
 import IconButton from "@mui/material/IconButton";
 import logo from '../assets/logo.png'
 import THeader from './TopHeader';
+import doc from '../assets/doc.docx'
 
 
 
@@ -76,10 +77,12 @@ export default function Home() {
         <Grid item xs={5}>
           <Paper elevation={3} style={{padding:"30px 10px 30px 10px"}}>
             <Grid container justifyContent={"center"}>
-              
-             <Typography style={{fontSize:18}}>Priyanka Suddireddy</Typography>
-                
-        
+              <Grid item xs={12}>
+             <Typography style={{fontSize:18}}>Please find the Help Resources in the below link</Typography>
+             <div>
+               <a style={{fontSize:15, marginTop:10}} href={doc}>link</a>
+             </div>
+             </Grid>
             </Grid>
           </Paper>
         </Grid>
@@ -91,7 +94,7 @@ export default function Home() {
             variant="contained"
             color="primary"
             onClick={() => {
-              history("/Signup");
+              history("/About");
             }}
             style={{backgroundColor:"white", color:"black"}}
             >
@@ -103,7 +106,7 @@ export default function Home() {
               style={{backgroundColor:"white", color:"black"}}
               color="primary"
               onClick={() => {
-                history("/Help");
+                history("/Contact");
               }}
             >
               Next

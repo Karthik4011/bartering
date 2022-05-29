@@ -75,11 +75,64 @@ export default function Home() {
       <Grid container justifyContent="center" style={{ marginTop: 30 }}>
         <Grid item xs={5}>
           <Paper elevation={3} style={{padding:"30px 10px 30px 10px"}}>
-            <Grid container justifyContent={"center"}>
-              
-             <Typography style={{fontSize:18}}>Priyanka Suddireddy</Typography>
-                
-        
+          <Grid container justifyContent={"center"}>
+                <Grid item xs={10}>
+                    <TextField
+                        variant="outlined"
+                        size="small"
+                        label="Email"
+                        value={email}
+                        fullWidth
+                        onChange={(event)=>{
+                            setEmail(event.target.value)
+                        }}
+                    >
+                    </TextField>
+                </Grid>
+                <Grid item xs={10} style={{marginTop:10}}>
+                    <TextField
+                        variant="outlined"
+                        size="small"
+                        label="Query"
+                        value={password}
+                        fullWidth
+                        multiline
+                        maxRows={4}
+                        onChange={(event)=>{
+                            setPassword(event.target.value)
+                        }}
+                        minRows={4}
+                    >
+                    </TextField>
+                </Grid>
+                <Grid item xs={6} style={{marginTop:30}}>
+                    <Button fullWidth color="primary" variant="contained"
+                    onClick={()=>{
+                      if(email != "" && email != null && password!="" && password!= null){
+                      toast.info("Query Submitted Successfully..!!!", {
+                        position: "bottom-center",
+                        pauseOnHover: true,
+                        draggable: true,
+                        autoClose: false,
+                      });
+                      toast.info("Our team will review and contact you soon", {
+                        position: "bottom-center",
+                        pauseOnHover: true,
+                        draggable: true,
+                        autoClose: false,
+                      });
+                    }
+                    else{
+                      toast.info("Email and Query should not be empty", {
+                        position: "bottom-center",
+                        pauseOnHover: true,
+                        draggable: true,
+                        autoClose: false,
+                      });
+                    }
+                    }}
+                    >Send Query</Button>
+                </Grid>
             </Grid>
           </Paper>
         </Grid>
@@ -91,7 +144,7 @@ export default function Home() {
             variant="contained"
             color="primary"
             onClick={() => {
-              history("/Signup");
+              history("/Help");
             }}
             style={{backgroundColor:"white", color:"black"}}
             >
@@ -100,11 +153,9 @@ export default function Home() {
           <IconButton edge="end" color="inherit">
             <Button
               variant="contained"
-              style={{backgroundColor:"white", color:"black"}}
+              style={{color:"white"}}
               color="primary"
-              onClick={() => {
-                history("/Help");
-              }}
+              disabled
             >
               Next
             </Button>

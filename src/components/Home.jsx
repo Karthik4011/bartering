@@ -197,6 +197,7 @@ export default function Home() {
       <AppBar position="fixed"  style={{boxShadow:"none",bottom:0,top:"auto"}}>
         <Toolbar>
         <div style={{flexGrow:0.5}} />
+        <IconButton edge="end" color="inherit">
           <Button
             variant="contained"
             color="primary"
@@ -205,6 +206,8 @@ export default function Home() {
           >
             Previous
           </Button>
+
+          </IconButton>
           <IconButton edge="end" color="inherit">
             <Button
               variant="contained"
@@ -217,6 +220,18 @@ export default function Home() {
               Next
             </Button>
           </IconButton>
+          <IconButton edge="end" color="inherit">
+          <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                history("/Home");
+              }}
+            >
+              Home
+            </Button>
+            </IconButton>
           <IconButton edge="end" color="inherit">
             <Button
               variant="contained"

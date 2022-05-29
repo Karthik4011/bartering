@@ -129,8 +129,8 @@ export default function Home() {
       <Header />
       <Grid container justifyContent="center" style={{ marginTop: 20 }}>
         <Grid item xs={10}>
-          <Paper elevation={3}>
-            <Grid container style={{ padding: 20 }} spacing={1}>
+          <Paper elevation={3} style={{marginTop:20}}>
+            <Grid container style={{ padding: 20 }} spacing={2}>
               <Grid item xs={6}>
                 <TextField
                   size="small"
@@ -167,6 +167,7 @@ export default function Home() {
                   </Select>
                 </FormControl>
               </Grid>
+              <Grid item xs={12} style={{marginTop:10}}></Grid>
               <Grid item xs={6}>
                 <TextField
                   size="small"
@@ -197,6 +198,7 @@ export default function Home() {
                   }}
                 />
               </Grid>
+              <Grid item xs={12} style={{marginTop:10}}></Grid>
               <Grid item xs={12} style={{padding:20, border:"1px solid #e1e1e1", borderRadius: 5, margin:20}}>
                 <ImageUploading
                   value={images}
@@ -264,6 +266,7 @@ export default function Home() {
                   )}
                 </ImageUploading>
               </Grid>
+              <Grid item xs={12} style={{marginTop:10}}></Grid>
               <Grid item xs={6}>
                 <TextField
                   size="small"
@@ -287,6 +290,7 @@ export default function Home() {
                   }}
                 />
               </Grid>
+              <Grid item xs={12} style={{marginTop:10}}></Grid>
               <Grid item xs={4}>
                 <Button
                   fullWidth
@@ -301,6 +305,7 @@ export default function Home() {
                   Add Item
                 </Button>
               </Grid>
+              <Grid item xs={12} style={{marginTop:10}}></Grid>
             </Grid>
           </Paper>
         </Grid>
@@ -330,6 +335,18 @@ export default function Home() {
               Next
             </Button>
           </IconButton>
+          <IconButton edge="end" color="inherit">
+          <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                history("/Home");
+              }}
+            >
+              Home
+            </Button>
+            </IconButton>
           <IconButton edge="end" color="inherit">
             <Button
               variant="contained"

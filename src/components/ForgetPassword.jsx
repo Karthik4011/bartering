@@ -14,7 +14,10 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import cookie from "react-cookies";
 import IconButton from "@mui/material/IconButton";
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
+import emailjs from "emailjs-com";
+import THeader from './TopHeader';
+
 
 
 
@@ -78,50 +81,7 @@ export default function Home() {
     </Backdrop>
   ) : (
     <Box sx={{ flexGrow: 1 }}>
-    <AppBar position="static" style={{boxShadow:"none"}}>
-        <Toolbar style={{textAlign:"left"}}>
-        <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block", textAlign:"left" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/intor");}}
-          >
-            <img src={logo} style={{width:100,marginTop:5,borderRadius:50}}></img>
-          </Typography>
-        <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/intor");}}
-          >
-            Bartering
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/Login");}}
-          >
-            Login
-          </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
-            onClick={()=>{ history("/Signup");}}
-          >
-            Sign Up
-          </Typography>
-        </Toolbar>
-    </AppBar>
+    <THeader></THeader>
       <Grid container justifyContent="center" style={{ marginTop: 30 }}>
         <Grid item xs={5}>
           <Paper elevation={3} style={{padding:"30px 10px 30px 10px"}}>
@@ -142,13 +102,72 @@ export default function Home() {
                 <Grid item xs={6} style={{marginTop:30}}>
                     <Button fullWidth color="primary" variant="contained"
                     onClick={()=>{
-                        toast.info("Password Reset details has been successfully sent", {
-                            position: "bottom-center",
-                            pauseOnHover: true,
-                            draggable: true,
-                            autoClose: false,
-                          });
+                      const templateParams = {
+                        from_name: "Bartering",
+                        message: "123",
+                        subject: "REQUEST FOR Bartering PASSWORD",
+                        to_name: "Customer",
+                        to_email: email,
+                        from_email: email,
+                      };
+                      emailjs
+                        .send(
+                          "service_2pioyjp",
+                          "template_7euffcm",
+                          templateParams,
+                          "user_UrSzNfk0Txv33rqJCC7uC"
+                        )
+                        .then(
+                          (response) => {
+                            console.log(
+                              "SUCCESS!",
+                              response.status,
+                              response.text
+                            );
+                            toast.info(
+                              "Email has been sent successfully",
+                              {
+                                position: "bottom-center",
+                                pauseOnHover: true,
+                                draggable: true,
+                                autoClose: false,
+                              }
+                            );
+
+                            toast.info("Please check your email.", {
+                              position: "bottom-center",
+                              pauseOnHover: true,
+                              draggable: true,
+                              autoClose: false,
+                            });
+
                           history("/Login")
+                          },
+                          (err) => {
+                            console.log("FAILED...", err);
+                            toast.info(
+                              "Something went wrong in sending mail, Please rise a query in contact page",
+                              {
+                                position: "bottom-center",
+                                pauseOnHover: true,
+                                draggable: true,
+                                autoClose: false,
+                              }
+                            );
+                            
+                          }
+                        )
+                    .catch(function (error) {
+                      toast.error(
+                        "Incorrect email or user doesn't have a account😲",
+                        {
+                          position: "top-right",
+                          pauseOnHover: true,
+                          draggable: true,
+                          autoClose: false,
+                        }
+                      );
+                    })
                     }}
                     >Send Password Reset Link</Button>
                 </Grid>
@@ -188,6 +207,19 @@ export default function Home() {
               }}
             >
               Next
+            </Button>
+          </IconButton>
+          <IconButton edge="end" color="inherit">
+            <Button
+              variant="contained"
+              style={{backgroundColor:"white", color:"black"}}
+              color="primary"
+              onClick={() => {
+                window.open("about:blank", "_self");
+                window.close();
+              }}
+            >
+              Exit
             </Button>
           </IconButton>
         </Toolbar>

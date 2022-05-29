@@ -116,7 +116,27 @@ export default function Home() {
           >
             Notifications
           </Typography>
-          <IconButton
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            style ={{cursor:"pointer"}}
+            onClick={()=>{
+              cookie.remove('user')
+              toast.info("Logged out successfull", {
+                position: "bottom-center",
+                pauseOnHover: true,
+                draggable: true,
+                autoClose: false,
+              });
+              history('/Login')
+            }}
+
+          >
+            Logout
+          </Typography>
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -133,8 +153,8 @@ export default function Home() {
               history('/Login')
             }}
           >
-            <LogoutIcon />
-          </IconButton> 
+            Logout
+          </IconButton>  */}
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>

@@ -76,9 +76,19 @@ export default function Home() {
         <Grid item xs={5}>
           <Paper elevation={3} style={{padding:"30px 10px 30px 10px"}}>
             <Grid container justifyContent={"center"}>
-              
-             <Typography style={{fontSize:18}}>Priyanka Suddireddy</Typography>
-                
+              <Grid item xs={12} style={{textAlign:"center"}}>
+              <Typography style={{fontSize:18}}>Priyanka Suddireddy</Typography><br></br>
+
+              </Grid>
+              <Grid item xs={12}>
+              <Typography style={{fontSize:18}}>Sai Hassan Dudekula</Typography><br></br>
+
+              </Grid>
+              <Grid item xs={12}>
+              <Typography style={{fontSize:18}}>Thummala abhigari sai neha</Typography>
+
+              </Grid>
+
         
             </Grid>
           </Paper>

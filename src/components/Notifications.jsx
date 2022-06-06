@@ -175,13 +175,13 @@ export default function Home() {
                           <Grid item xs={5}>
                             <Typography>Seller: {nego.selleritemowner}</Typography>
                           </Grid>
-                          <Grid item xs={5}>
+                          {/* <Grid item xs={5}>
                             <Typography>Price: {nego.borrowitemprice}</Typography>
                           </Grid>
                           <Grid item xs={2} style={{ paddingTop: 20 }}></Grid>
                           <Grid item xs={5}>
                             <Typography>Price: {nego.solditemprice}</Typography>
-                          </Grid>
+                          </Grid> */}
                         </Grid>
                       </CardContent>
                      
@@ -351,13 +351,13 @@ export default function Home() {
                           <Grid item xs={5}>
                             <Typography>Seller: {nego.selleritemowner}</Typography>
                           </Grid>
-                          <Grid item xs={5}>
+                          {/* <Grid item xs={5}>
                             <Typography>Price: {nego.borrowitemprice}</Typography>
                           </Grid>
                           <Grid item xs={2} style={{ paddingTop: 20 }}></Grid>
                           <Grid item xs={5}>
                             <Typography>Price: {nego.solditemprice}</Typography>
-                          </Grid>
+                          </Grid> */}
                         </Grid>
                       </CardContent>
                      

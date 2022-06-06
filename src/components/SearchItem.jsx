@@ -273,7 +273,7 @@ export default function Home() {
                         color="text.secondary">
                           Expectations: {item.expectations}
                         </Typography>
-                        <Typography variant="body2"
+                        {/* <Typography variant="body2"
                              style={{
                               maxHeight:"40px",
                               "text-overflow": "ellipsis",
@@ -283,7 +283,7 @@ export default function Home() {
                             }}
                         color="text.secondary">
                           Price: {item.price}
-                        </Typography>
+                        </Typography> */}
                       </CardContent>
                       <CardActions class="justify-center">
                         <Button

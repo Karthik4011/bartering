@@ -147,7 +147,7 @@ export default function Home() {
                               >
                                 Expectations: {item.expectations}
                               </Typography>
-                              <Typography
+                              {/* <Typography
                                 variant="body2"
                                 color="text.secondary"
                                 style={{
@@ -159,7 +159,7 @@ export default function Home() {
                                 }}
                               >
                                 Price: {item.price}
-                              </Typography>
+                              </Typography> */}
                             </CardContent>
                             <CardActions class="justify-center">
                               <Button

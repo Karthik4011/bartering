@@ -281,7 +281,7 @@ export default function Home() {
                 />
               </Grid>
               <Grid item xs={6}>
-                <TextField
+                {/* <TextField
                   size="small"
                   label="Price"
                   variant="outlined"
@@ -289,7 +289,7 @@ export default function Home() {
                   onChange={(event) => {
                     setPrice(event.target.value);
                   }}
-                />
+                /> */}
               </Grid>
               <Grid item xs={12} style={{marginTop:10}}></Grid>
               <Grid item xs={4}>

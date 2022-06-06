@@ -109,7 +109,8 @@ export default function Home() {
     reqbod['seller'] = item['selleritemowner']
     reqbod['buyer'] = item['borrowitemowner']
     reqbod['message'] = msg
-    reqbod['ndate'] = "22/03/2022"
+    const date =  new Date()
+    reqbod['ndate'] =  (date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear()
     axios({
       method: "POST",
       url: "http://localhost:8081/api/notifications",
@@ -137,7 +138,8 @@ export default function Home() {
     reqbod['seller'] = item['selleritemowner']
     reqbod['buyer'] = item['borrowitemowner']
     reqbod['message'] = msg
-    reqbod['ndate'] = "22/03/2022"
+    const date =  new Date()
+    reqbod['ndate'] =  (date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear()
     axios({
       method: "POST",
       url: "http://localhost:8081/api/notifications",

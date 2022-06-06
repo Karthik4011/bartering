@@ -87,7 +87,8 @@ export default function Home() {
             reqbody['expectations'] = expectations
             reqbody['quantity'] = quantity
             reqbody['sellerid'] = cookie.load('user')['id']
-            reqbody['inserteddate'] = "22/03/2022"
+            const date = new Date()
+            reqbody['inserteddate'] = (date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear()
             reqbody['price'] = price
             axios({
               method: "POST",

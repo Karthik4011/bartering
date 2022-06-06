@@ -198,14 +198,14 @@ export default function Home() {
         <Toolbar>
         <div style={{flexGrow:0.5}} />
         <IconButton edge="end" color="inherit">
-          <Button
+          {/* <Button
             variant="contained"
             color="primary"
             disabled
             style={{color:"white"}}
           >
             Previous
-          </Button>
+          </Button> */}
 
           </IconButton>
           <IconButton edge="end" color="inherit">

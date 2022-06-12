@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import GIF2 from "../assets/gif2.gif";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Backdrop from "@mui/material/Backdrop";
 import Drawer from "@mui/material/Drawer";
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -18,6 +18,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 export default function Home() {
   const history = useNavigate();
+  const location = useLocation();
 
   const [open, setOpen] = React.useState(false);
 
@@ -68,7 +69,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/Home"?"white":"", color:location.pathname=="/Home"?"black":"", textAlign:"center", borderRadius: location.pathname=="/Home"?5:5}}
             onClick={()=>{ history("/Home");}}
           >
             Home
@@ -78,7 +79,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/Add"?"white":"", color:location.pathname=="/Add"?"black":"", textAlign:"center", borderRadius: location.pathname=="/Add"?5:5}}
             onClick={()=>{ history("/Add");}}
           >
             Add Item
@@ -88,7 +89,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/Search"?"white":"", color:location.pathname=="/Search"?"black":"", textAlign:"center", borderRadius: location.pathname=="/Search"?5:5}}
             onClick={()=>{ history("/Search");}}
 
           >
@@ -99,7 +100,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/Trade"?"white":"", color:location.pathname=="/Trade"?"black":"", textAlign:"center", borderRadius: location.pathname=="/Trade"?5:5}}
             onClick={()=>{ history("/Trade");}}
 
           >
@@ -110,7 +111,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/Notifications"?"white":"", color:location.pathname=="/Notifications"?"black":"", textAlign:"center", borderRadius: location.pathname=="/Notifications"?5:5}}
             onClick={()=>{ history("/Notifications");}}
 
           >
@@ -128,7 +129,7 @@ export default function Home() {
                 position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
-                autoClose: false,
+                autoClose: true,
               });
               history('/Login')
             }}
@@ -148,7 +149,7 @@ export default function Home() {
                 position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
-                autoClose: false,
+                autoClose: true,
               });
               history('/Login')
             }}
@@ -157,6 +158,9 @@ export default function Home() {
           </IconButton>  */}
         </Toolbar>
       </AppBar>
+
+      {console.log("path")}
+        {console.log(location.pathname)}
       <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerClose}>
         <Grid
           container

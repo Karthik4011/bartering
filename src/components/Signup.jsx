@@ -47,7 +47,7 @@ export default function Home() {
                 position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
-                autoClose: false,
+                autoClose: true,
               });
               history("/Login")
           })
@@ -56,7 +56,7 @@ export default function Home() {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
-            autoClose: false,
+            autoClose: true,
           });
       }
   }
@@ -73,8 +73,8 @@ export default function Home() {
     <Box sx={{ flexGrow: 1 }}>
     <THeader></THeader>
       <Grid container justifyContent="center" style={{ marginTop: 30 }}>
-        <Grid item xs={5}>
-          <Paper elevation={3} style={{padding:"30px 10px 30px 10px"}}>
+        <Grid item xs={7}>
+          <Paper elevation={3} style={{padding:"60px 30px 60px 30px", marginTop: 30}}>
             <Grid container justifyContent={"center"}>
                 <Grid item xs={10}>
                     <TextField
@@ -86,6 +86,16 @@ export default function Home() {
                         onChange={(event)=>{
                             setEmail(event.target.value)
                         }}
+                    >
+                    </TextField>
+                </Grid>
+                <Grid item xs={10} style={{marginTop:10}}>
+                    <TextField
+                        variant="outlined"
+                        size="small"
+                        label="Enter Phone"
+                        type="number"
+                        fullWidth
                     >
                     </TextField>
                 </Grid>
@@ -106,6 +116,7 @@ export default function Home() {
                     <TextField
                         variant="outlined"
                         size="small"
+                        type="password"
                         label="Password"
                         value={password}
                         fullWidth
@@ -121,7 +132,7 @@ export default function Home() {
                     <Button fullWidth color="primary" variant="contained">Create Account</Button>
                 </Grid>
                 <Grid item xs={12}></Grid>
-                <Grid item xs={6} style={{marginTop:5}}>
+                <Grid item xs={6} style={{marginTop:10}}>
                    <Typography style={{fontSize:10, color:"CaptionText",fontStyle:"italic", cursor:"pointer"}}
                    onClick={()=>{
                        history("/Login")

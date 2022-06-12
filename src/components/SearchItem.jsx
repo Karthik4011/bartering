@@ -94,7 +94,7 @@ export default function Home() {
         position: "bottom-center",
         pauseOnHover: true,
         draggable: true,
-        autoClose: false,
+        autoClose: true,
       });
       insertNotify(reqbody, "Trade between item " + reqbody['solditemname'] + " and "+ reqbody['borrowitemname'] +" has been started")
       insertNotify1(reqbody, "Trade between item " + reqbody['solditemname'] + " and "+ reqbody['borrowitemname'] +" has been started")
@@ -124,7 +124,7 @@ export default function Home() {
         position: "bottom-center",
         pauseOnHover: true,
         draggable: true,
-        autoClose: false,
+        autoClose: true,
       });
       history("/Trade");
     })
@@ -402,7 +402,7 @@ export default function Home() {
                   position: "bottom-center",
                   pauseOnHover: true,
                   draggable: true,
-                  autoClose: false,
+                  autoClose: true,
                 });
                 history('/Login')
               }}

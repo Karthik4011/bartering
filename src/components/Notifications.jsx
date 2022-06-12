@@ -208,7 +208,7 @@ export default function Home() {
                                 position: "top-center",
                                 pauseOnHover: true,
                                 draggable: true,
-                                autoClose: false,
+                                autoClose: true,
                               });
                               insertNotify(nego, "Trade has been rejected......")
                               insertNotify1(nego, "Trade has been rejected......")
@@ -241,7 +241,7 @@ export default function Home() {
                                 position: "bottom-center",
                                 pauseOnHover: true,
                                 draggable: true,
-                                autoClose: false,
+                                autoClose: true,
                               });
                               insertNotify(nego, "Trade has been Accepted.....")
                               insertNotify1(nego, "Trade has been Accepted.....")
@@ -459,7 +459,7 @@ export default function Home() {
                   position: "bottom-center",
                   pauseOnHover: true,
                   draggable: true,
-                  autoClose: false,
+                  autoClose: true,
                 });
                 history('/Login')
               }}

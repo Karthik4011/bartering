@@ -48,7 +48,7 @@ export default function Home() {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
-            autoClose: false,
+            autoClose: true,
           });
           history("/Home")
           cookie.save('user', res.data)
@@ -57,7 +57,7 @@ export default function Home() {
                 position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
-                autoClose: false,
+                autoClose: true,
               });
         }
       })
@@ -66,7 +66,7 @@ export default function Home() {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
-            autoClose: false,
+            autoClose: true,
           });
     }
   }
@@ -130,7 +130,7 @@ export default function Home() {
                                 position: "bottom-center",
                                 pauseOnHover: true,
                                 draggable: true,
-                                autoClose: false,
+                                autoClose: true,
                               }
                             );
 
@@ -138,7 +138,7 @@ export default function Home() {
                               position: "bottom-center",
                               pauseOnHover: true,
                               draggable: true,
-                              autoClose: false,
+                              autoClose: true,
                             });
 
                           history("/Login")
@@ -151,7 +151,7 @@ export default function Home() {
                                 position: "bottom-center",
                                 pauseOnHover: true,
                                 draggable: true,
-                                autoClose: false,
+                                autoClose: true,
                               }
                             );
                             

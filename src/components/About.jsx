@@ -47,7 +47,7 @@ export default function Home() {
                 position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
-                autoClose: false,
+                autoClose: true,
               });
               history("/Login")
           })
@@ -56,7 +56,7 @@ export default function Home() {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
-            autoClose: false,
+            autoClose: true,
           });
       }
   }

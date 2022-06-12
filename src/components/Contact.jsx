@@ -47,7 +47,7 @@ export default function Home() {
                 position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
-                autoClose: false,
+                autoClose: true,
               });
               history("/Login")
           })
@@ -56,7 +56,7 @@ export default function Home() {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
-            autoClose: false,
+            autoClose: true,
           });
       }
   }
@@ -113,13 +113,13 @@ export default function Home() {
                         position: "bottom-center",
                         pauseOnHover: true,
                         draggable: true,
-                        autoClose: false,
+                        autoClose: true,
                       });
                       toast.info("Our team will review and contact you soon", {
                         position: "bottom-center",
                         pauseOnHover: true,
                         draggable: true,
-                        autoClose: false,
+                        autoClose: true,
                       });
                     }
                     else{
@@ -127,7 +127,7 @@ export default function Home() {
                         position: "bottom-center",
                         pauseOnHover: true,
                         draggable: true,
-                        autoClose: false,
+                        autoClose: true,
                       });
                     }
                     }}

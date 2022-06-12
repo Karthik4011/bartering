@@ -68,7 +68,7 @@ export default function Home() {
   ) : (
     <Box sx={{ flexGrow: 1 }}>
       <Header />
-      <Grid container justifyContent="center" style={{ marginTop: 20 }}>
+      <Grid container justifyContent="center" style={{ marginTop: 20, paddingBottom: 100 }}>
         <Grid item xs={10}>
           <Paper elevation={3}>
             <Grid container style={{ padding: 20 }} spacing={1}>
@@ -165,7 +165,7 @@ export default function Home() {
                   position: "bottom-center",
                   pauseOnHover: true,
                   draggable: true,
-                  autoClose: false,
+                  autoClose: true,
                 });
                 history('/Login')
               }}

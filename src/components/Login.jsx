@@ -45,7 +45,7 @@ export default function Home() {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
-            autoClose: false,
+            autoClose: true,
           });
           history("/Home")
           cookie.save('user', res.data)
@@ -54,7 +54,7 @@ export default function Home() {
                 position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
-                autoClose: false,
+                autoClose: true,
               });
         }
       })
@@ -63,7 +63,7 @@ export default function Home() {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
-            autoClose: false,
+            autoClose: true,
           });
     }
   }
@@ -79,9 +79,9 @@ export default function Home() {
   ) : (
     <Box sx={{ flexGrow: 1 }}>
     <THeader></THeader>
-      <Grid container justifyContent="center" style={{ marginTop: 30 }}>
-        <Grid item xs={5}>
-          <Paper elevation={3} style={{padding:"30px 10px 30px 10px"}}>
+      <Grid container justifyContent="center" style={{ marginTop: 80 }}>
+        <Grid item xs={7}>
+          <Paper elevation={3} style={{padding:"60px 30px 60px 30px"}}>
             <Grid container justifyContent={"center"}>
                 <Grid item xs={10}>
                     <TextField
@@ -100,6 +100,7 @@ export default function Home() {
                     <TextField
                         variant="outlined"
                         size="small"
+                        type="password"
                         label="Password"
                         value={password}
                         fullWidth
@@ -112,10 +113,10 @@ export default function Home() {
                 <Grid item xs={6} style={{marginTop:30}}>
                     <Button fullWidth color="primary" variant="contained"
                     onClick={handleLogin}
-                    >Login</Button>
+                    >Submit</Button>
                 </Grid>
                 <Grid item xs={12} style={{marginTop:15}}></Grid>
-                <Grid item xs={7} style={{marginTop:5}}>
+                <Grid item xs={7} style={{marginTop:15}}>
                    <Typography style={{fontSize:12, color:"CaptionText",fontStyle:"italic", cursor:"pointer"}}
                    onClick={()=>{
                        history("/Signup")

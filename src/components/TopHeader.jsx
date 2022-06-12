@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import GIF2 from "../assets/gif2.gif";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Backdrop from "@mui/material/Backdrop";
 import Paper from "@mui/material/Paper";
 import TextField from "@mui/material/TextField";
@@ -24,6 +24,7 @@ import desc from '../assets/desc.png'
 
 export default function Home() {
   const history = useNavigate();
+  const location = useLocation();
 
 
   const [loader, setLoader] = React.useState(true);
@@ -47,7 +48,7 @@ export default function Home() {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
-            autoClose: false,
+            autoClose: true,
           });
           history("/Home")
           cookie.save('user', res.data)
@@ -56,7 +57,7 @@ export default function Home() {
                 position: "bottom-center",
                 pauseOnHover: true,
                 draggable: true,
-                autoClose: false,
+                autoClose: true,
               });
         }
       })
@@ -65,7 +66,7 @@ export default function Home() {
             position: "bottom-center",
             pauseOnHover: true,
             draggable: true,
-            autoClose: false,
+            autoClose: true,
           });
     }
   }
@@ -81,6 +82,8 @@ export default function Home() {
   ) : (
     <Box sx={{ flexGrow: 1 }}>
     <AppBar position="static" style={{boxShadow:"none"}}>
+        {console.log("path")}
+        {console.log(location.pathname)}
         <Toolbar style={{textAlign:"left"}}>
         <Typography
             variant="h6"
@@ -97,7 +100,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/intor"?"white":"", color:location.pathname=="/intor"?"black":"", textAlign:"center", borderRadius: location.pathname=="/intor"?5:5}}
             onClick={()=>{ history("/intor");}}
           >
             Home
@@ -107,7 +110,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/Login"?"white":"", color:location.pathname=="/Login"?"black":"", textAlign:"center", borderRadius: location.pathname=="/Login"?5:5}}
             onClick={()=>{ history("/Login");}}
           >
             Login
@@ -117,7 +120,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/Signup"?"white":"", color:location.pathname=="/Signup"?"black":"", textAlign:"center", borderRadius: location.pathname=="/Signup"?5:5}}
             onClick={()=>{ history("/Signup");}}
           >
             Sign Up
@@ -127,7 +130,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/About"?"white":"", color:location.pathname=="/About"?"black":"", textAlign:"center", borderRadius: location.pathname=="/About"?5:5}}
             onClick={()=>{ history("/About");}}
           >
             About US
@@ -137,7 +140,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/Help"?"white":"", color:location.pathname=="/Help"?"black":"", textAlign:"center", borderRadius: location.pathname=="/Help"?5:5}}
             onClick={()=>{ history("/Help");}}
           >
             Help
@@ -147,7 +150,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            style ={{cursor:"pointer"}}
+            style ={{cursor:"pointer", backgroundColor:location.pathname=="/Contact"?"white":"", color:location.pathname=="/Contact"?"black":"", textAlign:"center", borderRadius: location.pathname=="/Contact"?5:5}}
             onClick={()=>{ history("/Contact");}}
           >
             Contact Us
